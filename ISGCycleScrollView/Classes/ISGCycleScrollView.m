@@ -212,7 +212,6 @@ static NSString * const ISGCycleCollectionCellID  = @"ISGCycleCollectionCellID";
     }
     ISGCycleCollectionCell *cell = (ISGCycleCollectionCell *)[collectionView dequeueReusableCellWithReuseIdentifier:ISGCycleCollectionCellID forIndexPath:indexPath];
     
-    
     NSString *imagePath = self.imagePathsGroup[itemIndex];
     if ([imagePath hasPrefix:@"http"]) {
         [cell.imageView sd_setImageWithURL:[NSURL URLWithString:imagePath] placeholderImage:self.placeholderImage];
@@ -223,12 +222,13 @@ static NSString * const ISGCycleCollectionCellID  = @"ISGCycleCollectionCellID";
         }
         cell.imageView.image = image;
     }
+    cell.imageView.contentMode = self.imageViewContentMode;
     return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     if ([self.delegate respondsToSelector:@selector(cycleScrollView: didSelectItemAtIndex:)]) {
-        [self.delegate cycleScrollView:self didSelectItemAtIndex:indexPath.item];
+        [self.delegate cycleScrollView:self didSelectItemAtIndex:[self pageControlIndexWithCurrentCellIndex:indexPath.item]];
     }
     if (self.didSelectAtInex) {
         self.didSelectAtInex([self pageControlIndexWithCurrentCellIndex:indexPath.item]);
@@ -274,11 +274,11 @@ static NSString * const ISGCycleCollectionCellID  = @"ISGCycleCollectionCellID";
     }
     NSInteger itemIndex = [self currentIndex];
     NSInteger indexOnPageControl = [self pageControlIndexWithCurrentCellIndex:itemIndex];
-    if ([self.delegate respondsToSelector:@selector(cycleScrollView: didSelectItemAtIndex:)]) {
-        [self.delegate cycleScrollView:self didSelectItemAtIndex:indexOnPageControl];
+    if ([self.delegate respondsToSelector:@selector(cycleScrollView:didScrollToIndex:)]) {
+        [self.delegate cycleScrollView:self didScrollToIndex:indexOnPageControl];
     }
-    if (self.didSelectAtInex) {
-        self.didSelectAtInex(indexOnPageControl);
+    if (self.didScrollAtIndex) {
+        self.didScrollAtIndex(indexOnPageControl);
     }
 }
 

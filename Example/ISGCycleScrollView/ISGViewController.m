@@ -22,6 +22,7 @@
 	
     ISGCycleScrollView *banner = [[ISGCycleScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 300)];
     [self.view addSubview:banner];
+    banner.imageViewContentMode = UIViewContentModeScaleAspectFill;
     banner.imageURLStringsGroup = @[@"https://t7.baidu.com/it/u=1621548477,242232046&fm=193&f=GIF",@"https://t7.baidu.com/it/u=1962848802,1705699489&fm=193&f=GIF",@"https://t7.baidu.com/it/u=3863249326,4619162&fm=193&f=GIF"];
     
     UIButton *nextBtn = [UIButton buttonWithType:UIButtonTypeCustom];

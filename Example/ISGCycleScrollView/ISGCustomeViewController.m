@@ -10,7 +10,7 @@
 #import <ISGCycleScrollView.h>
 #import "ISGCustomeCell.h"
 
-@interface ISGCustomeViewController ()<ISGCycleScrollViewDataSource>
+@interface ISGCustomeViewController ()<ISGCycleScrollViewDataSource,ISGCycleScrollViewDelegate>
 
 @property (nonatomic, strong) NSMutableArray *bannerDatas;
 
@@ -28,6 +28,7 @@
     ISGCycleScrollView *banner = [[ISGCycleScrollView alloc] initWithFrame:CGRectMake(0, 200, self.view.frame.size.width, 40)];
     [self.view addSubview:banner];
     banner.dataSource = self;
+    banner.delegate = self;
     banner.scrollDirection = UICollectionViewScrollDirectionVertical;
     banner.autoScrollTimeInterval = 2.0f;
     banner.showPageControl = NO;
@@ -47,6 +48,11 @@
     [self.bannerDatas removeAllObjects];
     [self.bannerDatas addObjectsFromArray:@[@"aaaaaaaaaaaa",@"bbbbbbbbbbbb",@"cccccccccccc"]];
     [self.banner reloadData];
+}
+
+#pragma mark - —————————————————————ISGCycleScrollViewDelegate—————————————————————
+- (void)cycleScrollView:(ISGCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index {
+    NSLog(@"-----%ld----",index);
 }
 
 #pragma mark - —————————————————————ISGCycleScrollViewDataSource—————————————————————

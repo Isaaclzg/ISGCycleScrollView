@@ -26,7 +26,15 @@ typedef NS_ENUM(NSUInteger, ISGPageControlStyle) {
 @protocol ISGCycleScrollViewDelegate <NSObject>
 @optional
 
+/// 点击回调
+/// @param cycleScrollView cycleScrollView
+/// @param index 下标
 - (void)cycleScrollView:(ISGCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index;
+
+/// 滚动回调
+/// @param cycleScrollView cycleScrollView
+/// @param index 下标
+- (void)cycleScrollView:(ISGCycleScrollView *)cycleScrollView didScrollToIndex:(NSInteger)index;
 
 @end
 
@@ -122,6 +130,9 @@ typedef NS_ENUM(NSUInteger, ISGPageControlStyle) {
 #pragma mark - —————————————————————Block—————————————————————
 /// 点击事件
 @property (nonatomic, copy) void (^didSelectAtInex)(NSInteger index);
+
+/// 滚动回调
+@property (nonatomic, copy) void (^didScrollAtIndex)(NSInteger index);
 
 #pragma mark - —————————————————————Public Method—————————————————————
 /// 可以调用此方法手动控制滚动到哪一个index
