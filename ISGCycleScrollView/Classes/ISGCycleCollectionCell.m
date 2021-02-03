@@ -6,7 +6,7 @@
 //
 
 #import "ISGCycleCollectionCell.h"
-@import SDAutoLayout;
+#import "SDAutoLayout.h"
 
 @interface ISGCycleCollectionCell()
 
