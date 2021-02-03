@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+target 'ISGCycleScrollView_Example' do
+  pod 'ISGCycleScrollView', :path => '../'
+
+  target 'ISGCycleScrollView_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
