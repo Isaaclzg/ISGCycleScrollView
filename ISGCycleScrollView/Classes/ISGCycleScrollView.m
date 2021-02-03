@@ -7,9 +7,10 @@
 
 #import "ISGCycleScrollView.h"
 #import "ISGCycleCollectionCell.h"
-@import SDAutoLayout;
-@import TAPageControl;
-@import SDWebImage;
+#import "SDAutoLayout.h"
+#import "TAPageControl.h"
+#import "TAAnimatedDotView.h"
+#import "UIImageView+WebCache.h"
 
 static NSString * const ISGCycleCollectionCellID  = @"ISGCycleCollectionCellID";
 
