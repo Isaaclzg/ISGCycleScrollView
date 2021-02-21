@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ISGCycleScrollView'
-  s.version          = '1.0.2'
+  s.version          = '1.0.3'
   s.summary          = 'ISGCycleScrollView'
 
 # This description is used to generate tags and improve search results.
@@ -38,7 +38,7 @@ Pod::Spec.new do |s|
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  s.dependency 'SDWebImage', '~> 5.10.0'
-  s.dependency 'TAPageControl', '~> 0.2.0'
-  s.dependency 'SDAutoLayout', '~> 2.2.1'
+  s.dependency 'SDWebImage', '>= 5.0.0'
+  s.dependency 'TAPageControl', '>= 0.2.0'
+  s.dependency 'SDAutoLayout', '>= 2.2.1'
 end
