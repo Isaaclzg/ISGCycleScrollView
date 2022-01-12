@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ISGCycleScrollView'
-  s.version          = '1.0.3'
+  s.version          = '1.0.4'
   s.summary          = 'ISGCycleScrollView'
 
 # This description is used to generate tags and improve search results.
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-  修复点击事件、修复图片缩放模式、添加滚动回调
+  自定义蒙版
                        DESC
 
   s.homepage         = 'https://github.com/isaaclzg/ISGCycleScrollView'

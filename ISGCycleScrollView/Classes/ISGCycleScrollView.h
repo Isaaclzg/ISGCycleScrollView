@@ -144,4 +144,7 @@ typedef NS_ENUM(NSUInteger, ISGPageControlStyle) {
 
 /// 刷新数据，建议自定义Cell时使用
 - (void)reloadData;
+
+- (void)setBlackTranslucentMasking:(CGFloat)alpha;
+
 @end

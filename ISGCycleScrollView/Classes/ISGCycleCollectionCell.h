@@ -11,4 +11,6 @@
 
 @property (nonatomic, strong) UIImageView *imageView;
 
+- (void)setBlackTranslucentMasking:(CGFloat)alpha;
+
 @end

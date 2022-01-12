@@ -10,6 +10,8 @@
 
 @interface ISGCycleCollectionCell()
 
+@property (nonatomic, strong) UIToolbar *toolbar;
+
 @end
 
 @implementation ISGCycleCollectionCell
@@ -26,6 +28,14 @@
 
 - (void)setupViews {
     self.imageView.sd_layout.spaceToSuperView(UIEdgeInsetsMake(0, 0, 0, 0));
+    
+    self.toolbar.sd_layout.spaceToSuperView(UIEdgeInsetsMake(0, 0, 0, 0));
+}
+
+#pragma mark - —————————————————————Public Method—————————————————————
+- (void)setBlackTranslucentMasking:(CGFloat)alpha {
+    self.toolbar.alpha = alpha;
+    self.toolbar.hidden = NO;
 }
 
 #pragma mark - —————————————————————Lazy Method—————————————————————
@@ -35,5 +45,15 @@
         [self.contentView addSubview:_imageView];
     }
     return _imageView;
+}
+
+- (UIToolbar *)toolbar {
+    if (nil == _toolbar) {
+        _toolbar = [[UIToolbar alloc] init];
+        [self.imageView addSubview:_toolbar];
+        _toolbar.barStyle = UIBarStyleBlack;
+        _toolbar.hidden = YES;
+    }
+    return _toolbar;
 }
 @end

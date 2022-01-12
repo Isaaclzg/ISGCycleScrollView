@@ -31,6 +31,9 @@ static NSString * const ISGCycleCollectionCellID  = @"ISGCycleCollectionCellID";
 /// 当imageURLs为空时的背景图
 @property (nonatomic, strong) UIImageView *backgroundImageView;
 
+/// 黑色半透明度
+@property (nonatomic, assign) CGFloat blackTranslucentMaskingAlpha;
+
 @end
 
 @implementation ISGCycleScrollView
@@ -222,7 +225,11 @@ static NSString * const ISGCycleCollectionCellID  = @"ISGCycleCollectionCellID";
         }
         cell.imageView.image = image;
     }
+    if (self.blackTranslucentMaskingAlpha > 0) {
+        [cell setBlackTranslucentMasking:self.blackTranslucentMaskingAlpha];
+    }
     cell.imageView.contentMode = self.imageViewContentMode;
+    cell.imageView.clipsToBounds = YES;
     return cell;
 }
 
@@ -306,6 +313,11 @@ static NSString * const ISGCycleCollectionCellID  = @"ISGCycleCollectionCellID";
 - (void)reloadData {
     self.imagePathsGroup = [[self.dataSource datas] copy];
     NSLog(@"");
+}
+
+- (void)setBlackTranslucentMasking:(CGFloat)alpha {
+    self.blackTranslucentMaskingAlpha = alpha;
+    [self.collectionView reloadData];
 }
 
 #pragma mark - —————————————————————Private Method—————————————————————
