@@ -1,5 +1,5 @@
 PODS:
-  - ISGCycleScrollView (1.0.3):
+  - ISGCycleScrollView (1.0.4.1):
     - SDAutoLayout (>= 2.2.1)
     - SDWebImage (>= 5.0.0)
     - TAPageControl (>= 0.2.0)
@@ -23,11 +23,11 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ISGCycleScrollView: f2b028adeca53cb0da6577698c793208c195d53c
+  ISGCycleScrollView: b7bb242b7bd39af27f9f214bbf9f5d99f987bbdb
   SDAutoLayout: 8bf6b3bbc8b01f775d4defbb4fda2ace805461be
   SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
   TAPageControl: fd11d779bbb5c2464ca2f55dde9e288213ea8a9b
 
 PODFILE CHECKSUM: 7902026d5c73d871b0e30ac3016e1344865ae82a
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.11.3

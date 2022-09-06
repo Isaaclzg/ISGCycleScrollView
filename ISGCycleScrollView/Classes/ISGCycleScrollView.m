@@ -591,6 +591,7 @@ static NSString * const ISGCycleCollectionCellID  = @"ISGCycleCollectionCellID";
         _collectionView.dataSource = self;
         _collectionView.delegate = self;
         _collectionView.scrollsToTop = NO;
+        _collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     }
     return _collectionView;
 }
